@@ -1,7 +1,7 @@
 console.log ("Ya estamos otra vez en D3")
 d3.json ("http://output.jsbin.com/lixujex/1.js").then (function (datos){
     
-    console.log ("Ya he cargado correctamente los datos")
+    console.log (datos)
     
     var height = 700
     var width = 500
