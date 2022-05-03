@@ -13,6 +13,10 @@ d3.csv ("ev_mig.csv").then (function (datos){
         .x(d => x(new Date(d.Año, d.Periodo=="Semestre 1" ? 5 :  11, 30)))
         .y(d => y(d.Emigración));
     
+        const linea2 = d3.line()
+        .x(d => x(new Date(d.Año, d.Periodo=="Semestre 1" ? 5 :  11, 30)))
+        .y(d => y(d.Inmigración));
+    
  
     var margin = {
         top: 10,
@@ -20,6 +24,7 @@ d3.csv ("ev_mig.csv").then (function (datos){
         bottom: 30,
         left: 60
     }
+    
     var width = 460 - margin.left - margin.right
     var height = 400 - margin.top - margin.bottom
     
@@ -55,7 +60,13 @@ d3.csv ("ev_mig.csv").then (function (datos){
             .attr("stroke", "steelblue")
             .attr("stroke-width",1.5)
             .attr("d",linea)
-        
+    
+                elementoSVG.append("path")
+            .datum(datos)
+            .attr("fill","none")
+            .attr("stroke", "red")
+            .attr("stroke-width",1.5)
+            .attr("d",linea2)
     })
     
     
