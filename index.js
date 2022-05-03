@@ -5,9 +5,9 @@ d3.csv ("ev_mig.csv").then (function (datos){
     
     console.log (datos)
  
-    //console.log (+(datos[0].Emigración))
-    //console.log (+(datos[1].Inmigración))
-    //console.log(new Date(datos[1].Año, datos[1].Periodo=="Semestre 1" ? 5 :  11, 30))
+/*    console.log (+(datos[0].Emigración))
+    console.log (+(datos[1].Inmigración))
+    console.log(new Date(datos[1].Año, datos[1].Periodo=="Semestre 1" ? 5 :  11, 30))*/
     
     const linea = d3.line()
         .x(d => x(new Date(d.Año, d.Periodo=="Semestre 1" ? 5 :  11, 30)))
